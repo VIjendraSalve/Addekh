@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/MainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rlSearch"
+                    android:layout_width="0dp"
+                    android:layout_weight="8.3"
+                    android:layout_height="54dp"
+                    android:layout_below="@+id/rlTopView"
+                    android:layout_margin="@dimen/margin_10"
+                    android:background="@drawable/edittext_background_searchbar"
+                    android:clickable="true"
+                    android:elevation="10dp"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/ivSearch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:clickable="false"
+                        android:focusableInTouchMode="false"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_search_black_24dp" />
+
+                    <EditText
+                        android:id="@+id/etWord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/ivSearch"
+                        android:background="@null"
+                        android:drawableStart="@drawable/ic_search_black_24dp"
+                        android:drawablePadding="@dimen/dp_10"
+                        android:hint="Search"
+                        android:textSize="@dimen/thirteen" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/iv_notifiction"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.7"
+                    android:layout_height="54dp"
+                    android:layout_margin="@dimen/margin_10"
+                    android:padding="@dimen/margin_10"
+                    android:background="@drawable/border_layout_new"
+                    android:src="@drawable/ic_notifications_24" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_category"
+                android:layout_below="@+id/ll_top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/fifteen"
+                android:layout_marginRight="@dimen/fifteen">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:background="@drawable/custom_border_category_dashboard"
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:reverseLayout="true" />
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/prog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:indeterminateTint="@color/colorPrimary"
+                        android:indeterminateTintMode="src_atop" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/prog"
+                        android:layout_centerHorizontal="true"
+                        android:text="Loading..."
+                        android:textColor="@color/black" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_main"
+                android:layout_below="@+id/rl_category"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/refresh"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@color/white">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_vendor_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </RelativeLayout>
+
+
+            <include layout="@layout/progress_endless" />
+
+            <include layout="@layout/no_record_layout" />
+
+            <include layout="@layout/no_internet_connection" />
+
+            <include layout="@layout/progress_bar" />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
+

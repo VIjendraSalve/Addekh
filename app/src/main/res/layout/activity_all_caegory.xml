@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/linear"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/img_back"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:contentDescription="@string/app_name"-->
+<!--            android:padding="5dp"-->
+<!--            android:src="@drawable/ic_back"-->
+<!--            />-->
+
+<!--    </RelativeLayout>-->
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal"
+       >
+
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tvCategoriesHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:drawablePadding="@dimen/dp_20"
+            android:padding="@dimen/dp_10"
+            android:text="@string/categories"
+            android:textColor="@color/marine_blue"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/relLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/linear"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_enquiry"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/prog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateTintMode="src_atop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog"
+            android:layout_centerHorizontal="true"
+            android:text="Loading..."
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tvAlertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_centerHorizontal="true"
+            android:text="No Data Available"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

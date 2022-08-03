@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/border_layout.xml" value="0.1885" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/border_layout_store_image.xml" value="0.1885" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/button_design.xml" value="0.2055" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/dialog_bg.xml" value="0.2565" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/discription_design.xml" value="0.1845" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_bullet.xml" value="0.2565" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_like.xml" value="0.1715" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_notifications_24.xml" value="0.1755" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_profile.xml" value="0.2375" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_search.xml" value="0.1845" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/ic_search_24.xml" value="0.1845" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/iv_share.xml" value="0.2565" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/map_disign.xml" value="0.1" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/slide_out_bottom.xml" value="0.2565" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/drawable/small_img_design.xml" value="0.1885" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_add_ads.xml" value="0.25" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_add_store.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_adds_list.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_all_caegory.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_banner_list.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_bottom_sheet_addstore.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_bottomsheet.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_bottomsheet_image_picker.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_category_search.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_city_area.xml" value="0.203125" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_fragment_ads.xml" value="0.22" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_main.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_my_store.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_notification.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_otp.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_profile.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_show_advertiesment.xml" value="0.340625" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/activity_template_list.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/demo.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_ad.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_adpublish.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_adv_details.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_bottomsheet_list_store.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_dashboard.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_favourites_ads.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_home.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_my_store.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_products.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_profile.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_re_home.xml" value="0.33" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/fragment_store.xml" value="0.3095890410958904" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/home_category_search_list_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/list_view_add_display.xml" value="0.37871853546910755" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/listview_banner.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/listview_template_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/loginbuttonshape.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/my_store_list_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/no_internet_connection.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/no_internet_dialog.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/no_record_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/no_record_layout_for_advertisment.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/no_record_layout_for_favourite.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/product_item_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/product_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/product_list_item_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/progress_bar.xml" value="0.203125" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/progress_endless.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/signupbuttonshape.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/store_list_layout.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/textviewshape.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/layout/toolbar.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3546875" />
+        <entry key="..\:/Sanket/Android Project/Addekho/Code/Addekho/app/src/main/res/menu/navigation.xml" value="0.3546875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/drawable/category_selection_border.xml" value="0.1665" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/drawable/edittext_background_searchbar.xml" value="0.1665" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/drawable/error_center_x.xml" value="0.1" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/drawable/error_circle.xml" value="0.1" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/drawable/warning_circle.xml" value="0.1" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_add_ads.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_banner_list.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_category_search.xml" value="0.1875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_fragment_ads.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_fragment_fav_ads.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_image_picker.xml" value="0.1875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_main.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_notification_row.xml" value="0.1875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_pick_location.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_profile.xml" value="0.33" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_search_result.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/activity_show_advertiesment.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/adapter_searchview.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/autocomplete_row.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/category_list_layout.xml" value="0.1875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/custom_dialog.xml" value="0.1" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/custome_notification_dialog.xml" value="0.1" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_ad.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_adv_details.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_bag.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_favourites_ads.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_home.xml" value="0.17592592592592593" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/fragment_store.xml" value="0.17592592592592593" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/google_places_search_items.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/home_category_search_list_layout.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/list_view_add_display.xml" value="0.17962962962962964" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/my_store_list_layout.xml" value="0.17592592592592593" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/no_record_layout_for_advertisment.xml" value="0.1921875" />
+        <entry key="..\:/Vijendra Android/Addekho/Sachin/Addekho/Addekho/Code/Addekho/app/src/main/res/layout/progress_endless.xml" value="0.1921875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

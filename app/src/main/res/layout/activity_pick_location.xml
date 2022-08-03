@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardElevation="3sp">
+
+        <LinearLayout
+            android:id="@+id/search_bar_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/places_ic_search" />
+
+            <EditText
+                android:id="@+id/adressText"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="8"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="@string/enter_place_name"
+                android:singleLine="true"
+                android:textSize="18sp"
+                android:background="@android:color/transparent"/>
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:visibility="gone" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        card_view:cardElevation="3sp"
+        android:layout_margin="@dimen/ten"
+        android:layout_below="@+id/cardView"
+        android:id="@+id/card_place_list"
+        android:visibility="gone">
+
+        <ListView
+            android:id="@+id/searchResultLV"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/five"
+            android:background="@color/white"
+            android:scrollbars="none"/>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

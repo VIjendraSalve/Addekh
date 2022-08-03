@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardMaxElevation="5dp"
+    app:cardElevation="4dp"
+    android:layout_margin="@dimen/margin_10"
+    android:id="@+id/cardView">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/product_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@drawable/border"
+            android:scaleType="fitXY"
+            android:src="@drawable/ban1" />
+
+        <ImageView
+            android:id="@+id/tv_img"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_below="@id/product_image"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="-20dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/border"
+            android:contentDescription="FavButtonDesc"
+            android:src="@drawable/mobile1" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_img"
+            android:fontFamily="sans-serif"
+            android:text="3 mins ago"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginTop="@dimen/margin_2"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/product_image"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/margin_10"
+                android:text="blogs"
+                android:layout_gravity="center_vertical"
+                android:textColor="@android:color/black"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/rlLocationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:gravity="end"
+                android:layout_margin="@dimen/margin_10"
+                android:layout_below="@id/tv_img">
+
+
+
+                <ImageView
+                    android:id="@+id/ivLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    app:srcCompat="@drawable/ic_location_on_24"
+                    app:tint="@color/black" />
+
+
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivLocation"
+                    android:text="Nashik"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/tv_location"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/tv_img"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:layout_toRightOf="@id/tv_time"-->
+<!--            android:drawableLeft="@drawable/ic_location_on_24"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:gravity="right"-->
+<!--            android:text="Nashik"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--            android:textColor="@android:color/darker_gray" />-->
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

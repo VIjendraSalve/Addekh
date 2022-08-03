@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        </com.google.android.material.appbar.AppBarLayout>-->
+
+    <LinearLayout
+        android:id="@+id/TopStucture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/ten"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:elevation="20dp">
+
+
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rlAreaSelections"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+                <RelativeLayout
+                    android:id="@+id/rlLocationTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_location_on_24"
+                        app:tint="@color/grey" />
+
+
+                    <TextView
+                        android:id="@+id/tvLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/ivLocation"
+                        android:text="Your Location"
+                        android:textColor="@color/grey"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:id="@+id/ivExpand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/tvLocation"
+                        app:srcCompat="@drawable/ic_expand_more_black_24dp"
+                        app:tint="@color/grey" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvAreaSet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rlLocationTitle"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="City, State, Country, pincode"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/google_red"
+                    android:textSize="@dimen/ten" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/content_main" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

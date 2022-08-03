@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activties.CreateBannerActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_proof"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="center"
+                android:src="@drawable/no_image_available"
+                android:layout_marginTop="@dimen/ten"
+                android:layout_margin="@dimen/ten"/>
+
+            <Button
+                android:id="@+id/btn_upload_image"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingLeft="@dimen/twenty"
+                android:paddingRight="@dimen/twenty"
+                android:text="Upload Logo"
+                android:textColor="@color/white" />
+
+
+
+                <EditText
+                    android:id="@+id/edt_business_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:hint="Enter Business Name"
+                    android:imeOptions="actionDone"
+                    android:text="Wind Hans Technologies"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Email"
+                    android:imeOptions="actionDone"
+                    android:text="hr@gmail.com"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+
+                <EditText
+                    android:id="@+id/edt_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Mobile"
+                    android:imeOptions="actionNext"
+                    android:text="8956535974"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/ten"
+                android:text="Please select discount type: "
+                android:textColor="@color/black" />
+
+            <Spinner
+                android:id="@+id/spnr_discount"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical" />
+
+
+
+                <EditText
+                    android:id="@+id/edt_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Offer Amount"
+                    android:imeOptions="actionNext"
+                    android:text=""
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+
+                <EditText
+                    android:id="@+id/edt_offer"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Offer Name"
+                    android:imeOptions="actionDone"
+                    android:text="Diwali Offer"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+
+                <EditText
+                    android:id="@+id/edt_offer_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Offer Description"
+                    android:imeOptions="actionDone"
+                    android:text="Mega discount on grocery"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+
+                <EditText
+                    android:id="@+id/edt_offer_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:background="@drawable/bg_otp_number_border"
+                    android:focusable="true"
+                    android:hint="Enter Offer Valid upto"
+                    android:imeOptions="actionDone"
+                    android:text="2022/06/30"
+                    android:editable="false"
+                    android:paddingLeft="@dimen/margin_10"
+                    android:inputType="text"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+
+            <Button
+                android:id="@+id/btn_add_vendor"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

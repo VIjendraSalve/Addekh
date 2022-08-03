@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="transition_signup"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="1dp"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:id="@+id/signup_title_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentRight="true"
+                                android:text="Publish Advertise"
+                                android:textAllCaps="true"
+                                android:layout_marginLeft="5dp"
+                                android:textColor="@color/black"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                android:transitionName="transition_title_text" />
+                            <ImageView
+                                android:id="@+id/signup_slide_text"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:src="@drawable/logo_one"
+                                android:transitionName="transition_slide_text" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/ten"
+                                android:text="Store Name"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/edt_Storename"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_otp_number_border"
+                                android:padding="@dimen/ten"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp">
+
+
+<!--                            <TextView-->
+<!--                                android:id="@+id/tvDescTitle"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginBottom="@dimen/ten"-->
+<!--                                android:text="Store Address"-->
+<!--                                android:textColor="@color/black" />-->
+
+<!--                            <RelativeLayout-->
+<!--                                android:id="@+id/rlTaskDesc"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_below="@+id/tvDescTitle"-->
+<!--                                android:layout_marginTop="5dp"-->
+<!--                                android:background="@drawable/bg_otp_number_border">-->
+
+<!--                                <EditText-->
+<!--                                    android:id="@+id/edt_StoreAddress"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_centerInParent="true"-->
+<!--                                    android:layout_marginLeft="10dp"-->
+<!--                                    android:background="@null"-->
+<!--                                    android:gravity="left|top"-->
+<!--                                    android:hint="Enter Full Address"-->
+<!--                                    android:inputType="text|textNoSuggestions|textMultiLine"-->
+<!--                                    android:lines="4"-->
+<!--                                    android:padding="10dp"-->
+<!--                                    android:singleLine="true"-->
+<!--                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+<!--                                    android:textColor="@color/black"-->
+<!--                                    android:textColorHint="@color/grey"-->
+<!--                                    android:textStyle="normal" />-->
+<!--                            </RelativeLayout>-->
+
+                            <RelativeLayout
+                                android:id="@+id/rllatlong"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp">
+
+                                <EditText
+                                    android:id="@+id/edt_StoreAddress"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="15dp"
+                                    android:background="@drawable/bg_otp_number_border"
+                                    android:editable="false"
+                                    android:focusable="false"
+                                    android:gravity="left|top"
+                                    android:inputType="text|textNoSuggestions|textMultiLine"
+                                    android:paddingLeft="15dp"
+                                    android:paddingTop="20dp"
+                                    android:paddingRight="15dp"
+                                    android:paddingBottom="15dp"
+                                    android:singleLine="true"
+                                    android:text=""
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/grey_light"
+                                    android:textStyle="normal" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="15dp"
+                                    android:layout_marginRight="15dp"
+                                    android:background="#ffffff"
+                                    android:text="Store Address"
+                                    android:textColor="@color/black"
+                                    android:textSize="12dp" />
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/ten"
+                                android:text="Store Contact"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <EditText
+                                android:id="@+id/edt_StoreContact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_otp_number_border"
+                                android:padding="@dimen/ten"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/ten"
+                                android:text="Store Category"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+<!--                            <EditText-->
+<!--                                android:id="@+id/edt_storeCategory"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:background="@drawable/bg_otp_number_border"-->
+<!--                                android:padding="@dimen/ten"-->
+<!--                                android:inputType="text"-->
+<!--                                android:maxLength="10"-->
+<!--                                android:textAppearance="@style/TextAppearance.AppCompat.Small" />-->
+                            <RelativeLayout
+                                android:id="@+id/rl_StoreCategory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvSiteTitle"
+                                android:background="@drawable/bg_otp_number_border"
+                                android:padding="10dp">
+
+
+                                <Spinner
+                                    android:id="@+id/sp_Store_category"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginRight="5dp"
+                                    android:gravity="center_vertical" />
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp">
+
+
+                            <TextView
+                                android:id="@+id/tv_Storedescri"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/ten"
+                                android:text="Store Description"
+                                android:textColor="@color/black" />
+
+                            <RelativeLayout
+                                android:id="@+id/rl_Storedescri"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_Storedescri"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/bg_otp_number_border">
+
+                                <EditText
+                                    android:id="@+id/edt_StoreDesc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@null"
+                                    android:gravity="left|top"
+                                    android:hint="Description"
+                                    android:inputType="text|textNoSuggestions|textMultiLine"
+                                    android:lines="4"
+                                    android:padding="10dp"
+                                    android:singleLine="true"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/grey"
+                                    android:textStyle="normal" />
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/Relativelayout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="left"
+                                    android:paddingBottom="10dp"
+                                    android:text="Store Image"
+                                    android:layout_gravity="center_vertical"
+                                    android:textColor="@android:color/darker_gray"
+                                    android:textSize="18sp" />
+
+                                <RelativeLayout
+                                    android:id="@+id/rlProfilePic"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_gravity="center">
+
+                                    <ImageButton
+                                        android:id="@+id/ivProfilePic"
+                                        android:layout_width="@dimen/dp_200"
+                                        android:layout_height="@dimen/dp_200"
+                                        android:scaleType="fitXY"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerInParent="true"
+                                        android:src="@drawable/defaultphoto" />
+
+                                    <ImageView
+                                        android:id="@+id/ivAddProfileImage"
+                                        android:layout_width="30dp"
+                                        android:layout_height="30dp"
+                                        android:layout_below="@+id/ivProfilePic"
+                                        android:layout_marginLeft="-45dp"
+                                        android:layout_marginTop="-35dp"
+                                        android:layout_toRightOf="@+id/ivProfilePic"
+                                        android:padding="5dp"
+                                        app:srcCompat="@drawable/ic_edit_24"
+                                        app:tint="@color/black" />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/btnSubmit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/button_shape"
+                            android:gravity="center"
+                            android:padding="@dimen/ten"
+                            android:text="Submit"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="16dp" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

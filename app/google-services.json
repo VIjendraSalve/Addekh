@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "755968567119",
+    "project_id": "lalitdangare-e923c",
+    "storage_bucket": "lalitdangare-e923c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:755968567119:android:cc2c8a36f876507d58473a",
+        "android_client_info": {
+          "package_name": "com.wht.addekho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "755968567119-jkh4a3tpedq9nlhpuvmnevdorce3bnu5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkKDqx9ZCz7OuNx6O8hcM3Thf0WcA8r-8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "755968567119-jkh4a3tpedq9nlhpuvmnevdorce3bnu5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/prog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateTintMode="src_atop" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/prog"
+            android:layout_centerHorizontal="true"
+            android:text="Loading..."
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/no_record" />
+
+        <TextView
+            android:id="@+id/tvAlertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img"
+            android:layout_centerHorizontal="true"
+            android:text="No Record Available"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardviewStore"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            android:background="@color/black_transparent">
+
+            <fragment
+                android:id="@+id/google_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+              />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardviewStore"
+            android:layout_marginTop="@dimen/margin_10">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_mystorelist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        app:elevation="4dp"
+        app:fabSize="normal"
+        app:pressedTranslationZ="12dp"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:layout_anchorGravity="center"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:visibility="gone"
+        android:focusable="true"
+        />
+
+</RelativeLayout>

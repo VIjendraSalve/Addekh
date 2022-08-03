@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llPMmainLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_10"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/rlImages"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_top_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/customborder"
+            android:padding="@dimen/five">
+
+            <ImageView
+                android:id="@+id/ivProductImg"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@mipmap/login" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rlImages"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:focusable="true"
+            android:text="Vijendra"
+            android:gravity="center"
+            android:textColor="@color/profileEditTextColor"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="5dp"
+    android:animateLayoutChanges="true"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    <TableRow
+        android:id="@+id/tbone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="8dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/tv_notification_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/notifications_caps"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_notification_delete_notification"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:gravity="right"
+            android:text="@string/delete_notifications_caps"
+            android:textColor="@color/colorAccent" />
+
+    </TableRow>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notification_list"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10sp"
+            android:dividerHeight="1sp"
+            android:scrollbars="none" />
+
+
+        <LinearLayout
+            android:id="@+id/noRecordLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/no_data_found" />
+
+
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:padding="10dp"
+                 android:text="@string/no_notifications_found"
+                 android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/ad_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/noRecordLayout"
+            android:layout_toEndOf="@+id/noRecordLayout">
+
+            <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_id" />
+        </LinearLayout>-->
+
+        <ProgressBar
+            android:id="@+id/progress_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/colorPrimary"
+            android:indeterminateTintMode="src_atop"
+            android:paddingTop="10dp"
+            android:visibility="gone" />
+
+        <!--<com.github.rahatarmanahmed.cpv.CircularProgressView
+            android:id="@+id/progress_view"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:padding="0dp"
+            app:cpv_color="@color/green"
+            app:cpv_animAutostart="true"
+            app:cpv_indeterminate="true"
+            app:cpv_thickness="3dp"
+            android:visibility="gone"/>-->
+    </RelativeLayout>
+
+
+</LinearLayout>
+

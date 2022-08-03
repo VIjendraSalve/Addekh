@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:transitionName="transition_signup"
+        android:layout_marginBottom="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/three"
+                app:cardElevation="@dimen/three"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/Relativelayout1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/iv_template_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitXY" />
+
+                        <TextView
+                            android:id="@+id/tv_template_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:paddingBottom="10dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Select Banner"
+                            android:textColor="@android:color/darker_gray"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_select"
+                        android:text="Select"
+                        android:layout_marginTop="10dp"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/shape_login_button"/>
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btn_view_template"
+                        android:text="View"
+                        android:layout_marginTop="10dp"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/shape_login_button"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</RelativeLayout>

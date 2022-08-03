@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/tbTitle"
+        layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tbTitle"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:id="@+id/rlZoneSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp">
+
+
+            <TextView
+                android:id="@+id/tvRegionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/ten"
+                android:text="@string/title_select_state"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRegionTitle"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/border_layout_new"
+                android:padding="10dp">
+
+
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                    android:id="@+id/spinnerCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:gravity="center_vertical" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rlTitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tbTitle"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:gravity="center_vertical"
+                android:padding="15dp"
+                android:text="@string/title_select_city"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvSubCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/prog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminateTint="@color/colorPrimary"
+                    android:indeterminateTintMode="src_atop" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/prog"
+                    android:layout_centerInParent="true"
+                    android:text="Loading..."
+                    android:textColor="@color/black" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/noInternet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_launcher"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvAlertText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="No Area found"
+                    android:textColor="@color/black" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_transparent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/colorPrimaryFullDark"
+            android:padding="7dip"
+            android:progressTint="@color/colorPrimaryFullDark"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

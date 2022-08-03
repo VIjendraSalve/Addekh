@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="5sp"
+    card_view:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--<ImageView
+                android:id="@+id/iv_notification_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+-->
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivLogoImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:elevation="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/no_data_found"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                android:layout_margin="10dp"
+                app:civ_shadow_color="@color/white"
+                app:civ_shadow_radius="2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+
+                <TextView
+                    android:id="@+id/tv_notification_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_notification_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_notification_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingMultiplier="1.2"
+                    android:layout_marginBottom="2dp"
+                    android:ellipsize="end"
+                    android:inputType="textMultiLine|textNoSuggestions"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="12dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/notification_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dip"
+                android:gravity="right"
+                android:padding="3dp"
+                android:text=""
+                android:textColor="@color/colorPrimary"
+                android:textSize="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
