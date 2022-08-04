@@ -14,6 +14,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -470,13 +471,25 @@ public class PickLocationActivity extends BaseActivity implements Response.Liste
         }
     }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                //overridePendingTransition(R.animator.left_right, R.animator.right_left);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (Integer.parseInt(Build.VERSION.SDK) > 5 && keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            Log.d("CDA", "onKeyDown Called");
+        if (Integer.parseInt(Build.VERSION.SDK) > 5
+                && keyCode == KeyEvent.KEYCODE_BACK
+                && event.getRepeatCount() == 0) {
             onBackPressed();
             //overridePendingTransition(R.animator.left_right, R.animator.right_left);
-            //Toast.makeText(this, "Please Pick Location", Toast.LENGTH_SHORT).show();
             return true;
         }
         return super.onKeyDown(keyCode, event);

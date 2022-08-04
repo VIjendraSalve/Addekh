@@ -225,7 +225,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener,
                             String categoryID = data.getStringExtra("category_id");
                             String categoryName = data.getStringExtra("category_name");
                             getAdvertisment(categoryID, "","1");
-                            etWord.setText(categoryName);
+                            //etWord.setText(categoryName);
                             //Toast.makeText(mainActivity, ""+data.getStringExtra("category_id"), Toast.LENGTH_SHORT).show();
                         }
                     }

@@ -31,6 +31,7 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,7 @@ import com.wht.addekho.BaseActivity;
 import com.wht.addekho.Constant.IConstant;
 import com.wht.addekho.Constant.IUrls;
 import com.wht.addekho.Constant.Interface;
+import com.wht.addekho.Fragments.HomeFragment;
 import com.wht.addekho.Helper.ConnectionDetector;
 import com.wht.addekho.Helper.Helper_Method;
 import com.wht.addekho.Helper.ImagePickerActivity;
@@ -661,9 +663,8 @@ public class ActivityAddStore extends BaseActivity {
                             Helper_Method.hideSoftInput(_act);
                             Helper_Method.dismissProgessBar();
                             Helper_Method.toaster(_act, stringMsg);
-                            Intent intent = new Intent(ActivityAddStore.this, ActivityStoreList.class);
-                            startActivity(intent);
                             finish();
+                            //loadFragment(new HomeFragment());
 
 
                         } else {
@@ -690,6 +691,19 @@ public class ActivityAddStore extends BaseActivity {
 
             }
         });
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack("TAG")
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
     public void onBackPressed() {

@@ -1,9 +1,7 @@
 package com.wht.addekho.Adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,17 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.wht.addekho.Activties.CategorySearchActivity;
 import com.wht.addekho.Model.AllCategory;
 import com.wht.addekho.R;
 
@@ -29,16 +22,11 @@ import java.util.ArrayList;
 
 public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapter.SingleItemRowHolder> {
 
+    public OnItemClickListener listener;
+    int selectedPosition = -1;
     private ArrayList<AllCategory> itemsList;
     private Context mContext;
     private AllCategory singleItem;
-    public OnItemClickListener listener;
-    int selectedPosition=-1;
-
-
-    public interface OnItemClickListener {
-        void onItemClick(String id);
-    }
 
 
     public HomeCategoryAdapter(Context context, ArrayList<AllCategory> itemsList, OnItemClickListener listener) {
@@ -62,7 +50,7 @@ public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapte
 
         holder.tvTitle.setText(singleItem.getName());
         holder.tvTitle.setVisibility(View.VISIBLE);
-        if(selectedPosition==i) {
+        if (selectedPosition == i) {
 
             holder.rlImages.setBackground(mContext.getDrawable(R.drawable.category_selection_border));
             holder.tvTitle.setTextColor(Color.RED);
@@ -89,13 +77,13 @@ public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapte
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("itemView", "onClick: "+itemsList.get(i).getName());
-                Log.d("itemView", "onClick: "+itemsList.get(i).getId());
-                selectedPosition=i;
+                Log.d("itemView", "onClick: " + itemsList.get(i).getName());
+                Log.d("itemView", "onClick: " + itemsList.get(i).getId());
+                selectedPosition = i;
                 notifyDataSetChanged();
-                if(itemsList.get(i).getName().equals("All")) {
+                if (itemsList.get(i).getName().equals("All")) {
                     listener.onItemClick("-1");
-                }else {
+                } else {
                     listener.onItemClick(itemsList.get(i).getId());
                 }
                 //Toast.makeText(mContext, ""+itemsList.get(i).getName(), Toast.LENGTH_SHORT).show();
@@ -108,6 +96,10 @@ public class HomeCategoryAdapter extends RecyclerView.Adapter<HomeCategoryAdapte
     @Override
     public int getItemCount() {
         return (null != itemsList ? itemsList.size() : 0);
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(String id);
     }
 
     public class SingleItemRowHolder extends RecyclerView.ViewHolder {

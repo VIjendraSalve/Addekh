@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="600dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.FragmentAdvDetails"
-    android:background="@drawable/dialog_bg">
+    android:background="@drawable/dialog_bg"
+    tools:context=".Fragments.FragmentAdvDetails">
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,7 +78,7 @@
                             android:text="Wind hans Technologies"
                             android:textColor="@color/black"
                             android:textSize="15dp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_date_time"
@@ -112,19 +113,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_margin="20dp"
-                android:background="@drawable/discription_design">
+                android:background="@drawable/discription_design"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Discription"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
                     android:textSize="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="10dp"/>
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -134,10 +135,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/ic_bullet"
-                        android:drawableTint="#F44336"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:drawableLeft="@drawable/ic_bullet"
+                        android:drawableTint="#F44336" />
 
                     <TextView
                         android:id="@+id/discription"
@@ -145,36 +146,35 @@
                         android:layout_height="wrap_content"
                         android:text="The spelling mistakes in the text had been highlighted in green."
                         android:textColor="@color/black"
-                        android:textSize="15dp"/>
+                        android:textSize="15dp" />
                 </LinearLayout>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="10dp">
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="Store Name"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:textSize="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/StoreName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginBottom="10dp"
                         android:text="Wins Hans Technology"
                         android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="40dp"/>
-
+                        android:textSize="15dp" />
 
 
                 </LinearLayout>
@@ -187,22 +187,22 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="Store Address"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:textSize="20dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="10dp"/>
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/adv_Address"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginBottom="10dp"
                         android:text="Near Pinacal Mall CBS Nashik"
                         android:textColor="@color/black"
-                        android:textSize="15dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginLeft="40dp"/>
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
@@ -212,32 +212,32 @@
                     android:orientation="horizontal">
 
 
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Store Contact"
                             android:textColor="@color/black"
-                            android:textStyle="bold"
                             android:textSize="20dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginLeft="10dp"/>
-
+                            android:textStyle="bold" />
 
 
                         <TextView
+                            android:id="@+id/mobile_number"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="7548961234"
-                            android:textColor="@color/black"
-                            android:textSize="15dp"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginLeft="40dp"
-                            android:textAlignment="gravity"/>
+                            android:layout_marginBottom="10dp"
+                            android:text="8956535974"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -245,64 +245,61 @@
                         android:layout_height="wrap_content"
                         android:gravity="end">
 
-                    <ImageView
-                        android:id="@+id/iv_like_adv"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:src="@drawable/ic_unlike"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginTop="10dp"/>
+                        <ImageView
+                            android:id="@+id/iv_like_adv"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/ic_unlike" />
                     </LinearLayout>
 
                 </LinearLayout>
 
 
-
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
                 android:layout_margin="20dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                <Button
-                    android:id="@+id/btn_direction"
-                    android:layout_width="@dimen/dp_150"
-                    android:layout_height="wrap_content"
-                    style="Style/Widget.MaterialComponants.Button.Icon"
-                    android:text="Direction"
-                    android:drawableLeft="@drawable/ic_round_directions_24"
-                    android:drawableTint="@color/white"
-                    android:backgroundTint="#393131"
-                    android:textSize="15dp"
-                    android:padding="@dimen/margin_10"
-                    />
+                    <Button
+                        android:id="@+id/btn_direction"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:backgroundTint="@color/black"
+                        android:drawableLeft="@drawable/ic_baseline_directions_24"
+                        android:text="Direction"
+                        android:textColor="@color/white"
+                        />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="@dimen/dp_20">
-                <Button
-                    android:id="@+id/btn_share"
-                    android:layout_width="@dimen/dp_150"
-                    android:layout_height="wrap_content"
-                    android:text="Share"
-                    android:drawableLeft="@drawable/iv_share"
-                    android:backgroundTint="#FFEE54"
-                    android:drawableTint="@color/white"
-                    android:textSize="15dp"
-                    android:padding="@dimen/margin_10"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_weight="1">
 
-                    />
+                    <Button
+                        android:id="@+id/btn_share"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_50"
+                        android:background="@color/red"
+                        android:drawableLeft="@drawable/ic_baseline_share_24"
+                        android:text="Share"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+
+                        />
                 </LinearLayout>
 
             </LinearLayout>
@@ -310,39 +307,35 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="20dp">
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AD ID :"
+                    android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/adv_ADID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
                     android:text="459848"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
                 <TextView
                     android:id="@+id/reportAD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
                     android:text="REPORT AD"
-                    android:textSize="15dp"
-                    android:textStyle="bold"
-                    android:textColor="#F44336"
                     android:textAlignment="viewEnd"
-                    android:layout_marginRight="10dp"/>
-
-
-
-
+                    android:textColor="#F44336"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
 
             </LinearLayout>

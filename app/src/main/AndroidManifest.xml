@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.ACTION_MANAGE_OVERLAY_PERMISSION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".Helper.MyApplication"
@@ -29,6 +30,23 @@
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
         >
+
+        <receiver
+            android:name=".Helper.MyLocationService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".Notification.FirebaseMessageService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".Notification.ActivityNotification"
             android:exported="false"/>
 
@@ -131,7 +149,7 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".Fragments.ProfileActivity" />
+        <activity android:name=".Activties.InitialActivity.ProfileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

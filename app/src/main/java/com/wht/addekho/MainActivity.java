@@ -6,6 +6,7 @@ import android.Manifest;
 import android.accounts.NetworkErrorException;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,6 +44,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
@@ -69,10 +71,12 @@ import com.wht.addekho.Fragments.BagFragment;
 import com.wht.addekho.Fragments.BottomsheetDialogMyStoreListFragment;
 import com.wht.addekho.Fragments.BottomsheetPublishAdFragment;
 import com.wht.addekho.Fragments.HomeFragment;
-import com.wht.addekho.Fragments.ProfileActivity;
+import com.wht.addekho.Activties.InitialActivity.ProfileActivity;
 import com.wht.addekho.Fragments.StoreFragment;
 import com.wht.addekho.Helper.GPSTracker;
 import com.wht.addekho.Helper.Helper_Method;
+import com.wht.addekho.Helper.MyLocationService;
+import com.wht.addekho.Helper.OnGPS;
 import com.wht.addekho.Helper.SharedPref;
 import com.wht.addekho.map_custom_search.PickLocationActivity;
 
@@ -119,6 +123,10 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     private Activity _act;
     private String flagToOpenAddStoreForm = "0"; // 0: store not added 1: store added
 
+    LocationRequest locationRequest;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private OnGPS onGPS = new OnGPS();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -147,11 +155,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         }
 
         floatingActionButton = findViewById(R.id.floatingActionButton);
-//        linearLayout = findViewById(R.id.bottom_sheet);
-//        imageView = findViewById(R.id.image);
-
-//        bottomSheetBehavior = BottomSheetBehavior.from(linearLayout);
-
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -185,6 +188,11 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
         if (!gpsStatus) {
             Toast.makeText(_act, "gps off", Toast.LENGTH_SHORT).show();
             statusCheck();
+        }
+
+        if (onGPS.IsGpsOn(MainActivity.this)) {
+            updateLocation();
+            Toast.makeText(_act, "Function called", Toast.LENGTH_SHORT).show();
         }
 
         Dexter.withActivity(MainActivity.this)
@@ -230,6 +238,9 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
                                 latitude = 0.0;
                                 longitude = 0.0;
                             }
+
+                            latitude = Double.parseDouble(SharedPref.getPrefs(_act, IConstant.MyCurrentLatitude));
+                            longitude = Double.parseDouble(SharedPref.getPrefs(_act, IConstant.MyCurrentLongitude));
 
                             try {
                                 Log.d("locationDetails", "latitude: " + latitude);
@@ -306,7 +317,6 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
 
         getMyStoreList();
     }
-
 
     public void statusCheck() {
         final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -656,4 +666,57 @@ public class MainActivity extends BaseActivity implements BottomNavigationView.O
     public void onConnectionSuspended(int i) {
 
     }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setTitle("Really Exit?")
+                .setMessage("Are you sure you want to exit?")
+                .setNegativeButton(android.R.string.no, null)
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        MainActivity.super.onBackPressed();
+                        finishAffinity();
+                    }
+                }).create().show();
+    }
+
+    /********************* Background Location Update**************************/
+    private void updateLocation() {
+        buildLocationRequest();
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        fusedLocationProviderClient.requestLocationUpdates(locationRequest, getPendingIntent());
+    }
+
+    private PendingIntent getPendingIntent() {
+        Log.d("MYTAG", "getPendingIntent: ");
+        Intent intent = new Intent(this, MyLocationService.class);
+        intent.setAction(MyLocationService.ACTION_PROCESS_UPDATE);
+        return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+    }
+
+    private void buildLocationRequest() {
+
+        locationRequest = new LocationRequest();
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        locationRequest.setInterval(18000);
+        locationRequest.setFastestInterval(18000);
+        locationRequest.setSmallestDisplacement(10f);
+
+    }
+
+    /********************* Background Location Update END**************************/
+
+
 }

@@ -132,14 +132,14 @@ public class AdvertismentListAdapter extends RecyclerView.Adapter<AdvertismentLi
             }
         });
 
-        holder.iv_banner_image.setOnClickListener(new View.OnClickListener() {
+        /*holder.iv_banner_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 showDialog(itemsList, i);
 
             }
-        });
+        });*/
 
 
         try {
@@ -270,12 +270,14 @@ public class AdvertismentListAdapter extends RecyclerView.Adapter<AdvertismentLi
         btn_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String StoreName = "";
-                String StroreAddress = "";
-                ;
+                String StoreName =advertismentArrayList.get(position).getTitle()
+                        +", \n"+advertismentArrayList.get(position).getDescription()
+                        +", \n"+ advertismentArrayList.get(position).getStore_name()
+                        +", \n"+ advertismentArrayList.get(position).getStore_address();
+
                 Intent intentShare = new Intent(Intent.ACTION_SEND);
                 intentShare.setType("text/plain");
-                intentShare.putExtra(Intent.EXTRA_TEXT, "My Text of the message goes here ... write anything what you want" + "name\n" + "address\n" + StoreName + "\n");
+                intentShare.putExtra(Intent.EXTRA_TEXT, ""+ StoreName);
                 mContext.startActivity(Intent.createChooser(intentShare, "Shared the text ..."));
             }
         });

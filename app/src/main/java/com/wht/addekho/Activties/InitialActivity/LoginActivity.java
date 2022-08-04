@@ -82,10 +82,10 @@ public class LoginActivity extends BaseActivity {
                     if (isValid()) {
                         Helper_Method.hideSoftInput(_act);
                         userLogin();
-                    } else {
-                        Helper_Method.toaster_long(_act, getResources().getString(R.string.string_internet_connection_warning));
                     }
 
+                }else {
+                    Helper_Method.toaster_long(_act, getResources().getString(R.string.string_internet_connection_warning));
                 }
 
             }

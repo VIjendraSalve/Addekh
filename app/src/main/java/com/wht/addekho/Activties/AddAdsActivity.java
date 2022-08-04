@@ -1,17 +1,12 @@
 package com.wht.addekho.Activties;
 
-import static com.wht.addekho.Constant.IConstant.USER_PHOTO;
-
 import android.Manifest;
 import android.accounts.NetworkErrorException;
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.location.Location;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -20,14 +15,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResult;
@@ -35,9 +27,7 @@ import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -46,8 +36,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationResult;
-import com.google.android.gms.location.LocationServices;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -55,16 +43,16 @@ import com.karumi.dexter.listener.DexterError;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.wht.addekho.Adapter.BottomSheetMyStoreListAdapter;
-import com.wht.addekho.Adapter.HomeCategoryAdapter;
 import com.wht.addekho.BaseActivity;
 import com.wht.addekho.Constant.IConstant;
 import com.wht.addekho.Constant.IUrls;
 import com.wht.addekho.Constant.Interface;
+import com.wht.addekho.Fragments.HomeFragment;
 import com.wht.addekho.Helper.ConnectionDetector;
 import com.wht.addekho.Helper.EasyLocationProvider;
 import com.wht.addekho.Helper.Helper_Method;
 import com.wht.addekho.Helper.ImagePickerActivity;
+import com.wht.addekho.Helper.MyValidator;
 import com.wht.addekho.Helper.SharedPref;
 import com.wht.addekho.Helper.TagEditText;
 import com.wht.addekho.Model.AllCategory;
@@ -98,6 +86,10 @@ import retrofit2.Response;
 
 public class AddAdsActivity extends BaseActivity {
 
+    public static final int REQUEST_LOGO_IMAGE = 100;
+    private static final String TAG = ActivityAddStore.class.getSimpleName();
+    ActivityResultLauncher<Intent> launchSomeActivity = null, launchDropActivity = null;
+    EasyLocationProvider easyLocationProvider; //Declare Global Variable
     private Spinner spnr_store, spinnerCategory;
     private ImageView image_add_banner;
     private EditText edt_add_title, edt_add_end_date, et_add_details;
@@ -106,12 +98,7 @@ public class AddAdsActivity extends BaseActivity {
     private String imagePath = "", receiveImgPath, user_profile_path = null;
     private Uri ilogoUrl;
     private TagEditText tagedt_tags;
-
-    ActivityResultLauncher<Intent> launchSomeActivity = null, launchDropActivity = null;
-    public static final int REQUEST_LOGO_IMAGE = 100;
-    private static final String TAG = ActivityAddStore.class.getSimpleName();
     private ConnectionDetector connectionDetector;
-
     private RequestBody requestFileProfile = null;
     private File profileFile = null;
     private MultipartBody.Part bodyProfile = null;
@@ -120,33 +107,25 @@ public class AddAdsActivity extends BaseActivity {
     private File file = null;
     private MultipartBody.Part body = null;
     private RequestBody requestFile = null;
-
-
     //Category List
     private ArrayList<AllCategory> categoryArrayList = new ArrayList<>();
     private String category_path = null;
-
     private ArrayList<BottomsheetMyStoreListObject> myStoreListObjects = new ArrayList<>();
-
-
     //variable : action:1 // 1:add, 2:update  // last_date:2022-07-01
-    private String user_id="";
+    private String user_id = "";
     private String action = "1";
-    private String categoryId="";
-    private String advt_title="";
+    private String categoryId = "";
+    private String advt_title = "";
     private double lat;
     private double lang;
-    private String advt_desc="";
-    private String tags="";
-    private String last_date="";
-    private String store_id="";
-
+    private String advt_desc = "";
+    private String tags = "";
+    private String last_date = "";
+    private String store_id = "";
     private FusedLocationProviderClient mFusedLocationClient;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
-
-    EasyLocationProvider easyLocationProvider; //Declare Global Variable
-
+    private ImageView cancelBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,45 +133,39 @@ public class AddAdsActivity extends BaseActivity {
         setContentView(R.layout.activity_add_ads);
 
         tv_lat_long = findViewById(R.id.tv_lat_long);
+        Dexter.withActivity(AddAdsActivity.this)
+                .withPermissions(
+                        Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION)
+                .withListener(new MultiplePermissionsListener() {
+                    @Override
+                    public void onPermissionsChecked(MultiplePermissionsReport report) {
+                        // check if all permissions are granted
+                        if (report.areAllPermissionsGranted()) {
+                            //true
+                            getLocation();
+                        }
+                        // check for permanent denial of any permission
+                        if (report.isAnyPermissionPermanentlyDenied()) {
+                            // show alert dialog navigating to Settings
+                            showSettingsDialog();
+                        }
+                    }
 
 
-
-                Dexter.withActivity(AddAdsActivity.this)
-                        .withPermissions(
-                                Manifest.permission.ACCESS_FINE_LOCATION,
-                                Manifest.permission.ACCESS_COARSE_LOCATION)
-                        .withListener(new MultiplePermissionsListener() {
-                            @Override
-                            public void onPermissionsChecked(MultiplePermissionsReport report) {
-                                // check if all permissions are granted
-                                if (report.areAllPermissionsGranted()) {
-                                    //true
-                                    getLocation();
-                                }
-                                // check for permanent denial of any permission
-                                if (report.isAnyPermissionPermanentlyDenied()) {
-                                    // show alert dialog navigating to Settings
-                                    showSettingsDialog();
-                                }
-                            }
-
-
-                            @Override
-                            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
-                                token.continuePermissionRequest();
-                            }
-                        }).
-                        withErrorListener(new PermissionRequestErrorListener() {
-                            @Override
-                            public void onError(DexterError error) {
-                                Toast.makeText(AddAdsActivity.this, "Error occurred! ", Toast.LENGTH_SHORT).show();
-                            }
-                        })
-                        .onSameThread()
-                        .check();
-
-
-
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).
+                withErrorListener(new PermissionRequestErrorListener() {
+                    @Override
+                    public void onError(DexterError error) {
+                        Toast.makeText(AddAdsActivity.this, "Error occurred! ", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .onSameThread()
+                .check();
 
 
         initViews();
@@ -205,7 +178,7 @@ public class AddAdsActivity extends BaseActivity {
         super.onDestroy();
     }
 
-    private void getLocation(){
+    private void getLocation() {
         easyLocationProvider = new EasyLocationProvider.Builder(AddAdsActivity.this)
                 .setInterval(5000)
                 .setFastestInterval(2000)
@@ -213,12 +186,12 @@ public class AddAdsActivity extends BaseActivity {
                 .setListener(new EasyLocationProvider.EasyLocationCallback() {
                     @Override
                     public void onGoogleAPIClient(GoogleApiClient googleApiClient, String message) {
-                        Log.e("EasyLocationProvider","onGoogleAPIClient: "+message);
+                        Log.e("EasyLocationProvider", "onGoogleAPIClient: " + message);
                     }
 
                     @Override
                     public void onLocationUpdated(double latitude, double longitude) {
-                        Log.e("EasyLocationProvider","onLocationUpdated:: "+ "Latitude: "+latitude+" Longitude: "+longitude);
+                        Log.e("EasyLocationProvider", "onLocationUpdated:: " + "Latitude: " + latitude + " Longitude: " + longitude);
                         //tv_lat_long.setText("Current latitude and Longitude : "+latitude + "  "+longitude);
                         lat = latitude;
                         lang = longitude;
@@ -226,7 +199,7 @@ public class AddAdsActivity extends BaseActivity {
 
                     @Override
                     public void onLocationUpdateRemoved() {
-                        Log.e("EasyLocationProvider","onLocationUpdateRemoved");
+                        Log.e("EasyLocationProvider", "onLocationUpdateRemoved");
                     }
                 }).build();
 
@@ -362,7 +335,7 @@ public class AddAdsActivity extends BaseActivity {
 
                             if (categoryArrayList.size() != 0) {
 
-                             //   Toast.makeText(_act, "rewrwe", Toast.LENGTH_SHORT).show();
+                                //   Toast.makeText(_act, "rewrwe", Toast.LENGTH_SHORT).show();
                                 ArrayAdapter<AllCategory> arrayAdapter1 = new ArrayAdapter<AllCategory>(
                                         AddAdsActivity.this,
                                         androidx.appcompat.R.layout.support_simple_spinner_dropdown_item,
@@ -446,6 +419,7 @@ public class AddAdsActivity extends BaseActivity {
     private void initViews() {
 
         _act = AddAdsActivity.this;
+        cancelBtn = findViewById(R.id.cancelBtn);
         spnr_store = findViewById(R.id.spnr_store);
         spinnerCategory = findViewById(R.id.spinnerCategory);
         image_add_banner = findViewById(R.id.image_add_banner);
@@ -454,6 +428,13 @@ public class AddAdsActivity extends BaseActivity {
         et_add_details = findViewById(R.id.et_add_details);
         btnSubmit = findViewById(R.id.btnSubmit);
         tagedt_tags = findViewById(R.id.tagedt_tags);
+
+        cancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         launchSomeActivity = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -469,6 +450,7 @@ public class AddAdsActivity extends BaseActivity {
                         }
                     }
                 });
+
 
         image_add_banner.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -532,14 +514,35 @@ public class AddAdsActivity extends BaseActivity {
             }
         });
 
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddStoreAdvertise();
+                if (validateFields()) {
+                    if (imagePath.length() > 0) {
+                        AddStoreAdvertise();
+                    } else {
+                        Toast.makeText(AddAdsActivity.this, "Please select image..!!", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
         webServiceCallCategory();
+    }
+
+    private boolean validateFields() {
+        boolean result = true;
+        if (!MyValidator.isValidField(edt_add_title)) {
+            result = false;
+        }
+        if (!MyValidator.isValidField(et_add_details)) {
+            result = false;
+        }
+        if (!MyValidator.isValidField(edt_add_end_date)) {
+            result = false;
+        }
+        return result;
     }
 
     public void openSomeActivityForResult() {
@@ -724,6 +727,7 @@ public class AddAdsActivity extends BaseActivity {
                         if (stringCode.equalsIgnoreCase(IConstant.RESPONSE_SUCCESS)) {
                             Helper_Method.dismissProgessBar();
 
+                            //loadFragment(new HomeFragment());
                             finish();
 
                         } else {
@@ -750,6 +754,19 @@ public class AddAdsActivity extends BaseActivity {
 
             }
         });
+    }
+
+    private boolean loadFragment(Fragment fragment) {
+        //switching fragment
+        if (fragment != null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack("TAG")
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
 

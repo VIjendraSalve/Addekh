@@ -1,6 +1,5 @@
-package com.wht.addekho.Fragments;
+package com.wht.addekho.Activties.InitialActivity;
 
-import static android.app.Activity.RESULT_OK;
 import static com.wht.addekho.Constant.IConstant.USER_PHOTO;
 
 import android.Manifest;
@@ -8,41 +7,22 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
@@ -51,29 +31,19 @@ import com.karumi.dexter.listener.DexterError;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.PermissionRequestErrorListener;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.wht.addekho.Activties.InitialActivity.LoginActivity;
 import com.wht.addekho.BaseActivity;
 import com.wht.addekho.Constant.IConstant;
 import com.wht.addekho.Constant.IUrls;
 import com.wht.addekho.Constant.Interface;
 import com.wht.addekho.Helper.Camera;
-import com.wht.addekho.Helper.ConnectionDetector;
-import com.wht.addekho.Helper.Helper_Method;
-import com.wht.addekho.Helper.ImagePickerActivity;
+import com.wht.addekho.Helper.MyValidator;
 import com.wht.addekho.Helper.SharedPref;
-import com.wht.addekho.Helper.Validations;
-import com.wht.addekho.MainActivity;
-import com.wht.addekho.Model.GenderObject;
 import com.wht.addekho.R;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -114,6 +84,7 @@ public class ProfileActivity extends BaseActivity implements Camera.AsyncRespons
     }
 
     private void initVariable() {
+
         iv_proof = findViewById(R.id.iv_proof);
         iv_edit_profile_pic = findViewById(R.id.iv_edit_profile_pic);
         edt_fname = findViewById(R.id.edt_fname);
@@ -211,9 +182,26 @@ public class ProfileActivity extends BaseActivity implements Camera.AsyncRespons
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                uploadFile(profile_image_path, profile_image_name);
+
+                if(validateFields()) {
+                    uploadFile(profile_image_path, profile_image_name);
+                }
             }
         });
+    }
+
+    private boolean validateFields() {
+        boolean result = true;
+        if (!MyValidator.isValidField(edt_fname)) {
+            result = false;
+        }
+        if (!MyValidator.isValidField(edt_lname)) {
+            result = false;
+        }
+        if (!MyValidator.isValidEmail(edt_email)) {
+            result = false;
+        }
+        return result;
     }
 
     @Override
@@ -352,7 +340,6 @@ public class ProfileActivity extends BaseActivity implements Camera.AsyncRespons
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
                 progressDialog.dismiss();
             }
 
