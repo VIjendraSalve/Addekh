@@ -11,7 +11,8 @@
         android:id="@+id/rlImages"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
         <LinearLayout
             android:id="@+id/ll_top_layout"
@@ -25,10 +26,10 @@
                 android:id="@+id/ivProductImg"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/login" />
+                android:layout_marginLeft="5dp"
+               />
 
         </LinearLayout>
-
 
         <TextView
             android:id="@+id/tvProductName"
@@ -37,17 +38,16 @@
             android:layout_below="@+id/rlImages"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:layout_marginLeft="@dimen/dp_10"
-            android:layout_marginRight="@dimen/margin_10"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
             android:focusable="true"
             android:text="Vijendra"
             android:gravity="center"
             android:textColor="@color/profileEditTextColor"
             android:textSize="14sp" />
-
 
     </LinearLayout>
 

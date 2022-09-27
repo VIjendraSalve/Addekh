@@ -37,21 +37,7 @@
 
     </RelativeLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/white"
-        android:clickable="true"
-        android:focusable="true"
-        app:elevation="4dp"
-        app:fabSize="normal"
-        app:layout_anchorGravity="center"
-        app:pressedTranslationZ="12dp"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+
 
     <include layout="@layout/progress_endless" />
 

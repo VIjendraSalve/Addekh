@@ -56,8 +56,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:visibility="gone"
                     android:text="Enter Mobile Number"
-                    android:textAlignment="center"
+                    android:textAlignment="textStart"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
 
@@ -65,13 +68,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:layout_marginTop="12dp"
                     android:weightSum="100">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="25"
+                        android:visibility="gone"
                         android:gravity="center">
 
                         <ImageView
@@ -91,25 +94,33 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="75"
-                            android:background="#f6f6f6">
+                            android:layout_weight="100"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp">
 
-                        <EditText
-                            android:id="@+id/edt_Mobile_number"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@null"
-                            android:hint="1234-567-890"
-                            android:inputType="phone"
-                            android:maxLength="10"
-                            android:padding="12dp"
-                            android:textColor="#000000"
-                            android:textColorHint="#c7c7c8"
-                            android:textSize="15sp" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/mobiles"
+                                app:boxCornerRadiusBottomEnd="10dp"
+                                app:boxCornerRadiusBottomStart="10dp"
+                                app:boxCornerRadiusTopEnd="10dp"
+                                app:boxCornerRadiusTopStart="10dp">
+
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/edt_Mobile_number"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="phone"
+                                    android:maxLength="10"
+                                    android:textColor="#000000"
+                                    android:textSize="12sp" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
                         </LinearLayout>
-
-
-
 
                 </LinearLayout>
 
@@ -122,7 +133,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="24dp"
-                    android:background="@drawable/buttonshape"
+                    android:background="@drawable/button_shape"
                     android:text="Generate OTP"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"

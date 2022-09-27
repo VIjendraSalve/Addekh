@@ -6,90 +6,80 @@
     android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_10"
-        android:orientation="horizontal"
-        android:weightSum="10">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/dp_5"-->
+<!--        app:cardCornerRadius="@dimen/dp_5"-->
+<!--        app:cardElevation="@dimen/dp_5">-->
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3">
+            android:layout_margin="@dimen/margin_10"
+            android:orientation="horizontal"
+            android:weightSum="10">
 
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_image_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
                 android:elevation="10dp"
                 app:cardCornerRadius="10dp">
 
                 <ImageView
                     android:id="@+id/img_Storelogo"
-                    android:layout_width="@dimen/dp_90"
-                    android:layout_height="@dimen/dp_80"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
                     android:src="@drawable/no_image_available" />
 
             </androidx.cardview.widget.CardView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_text_Data"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/margin_10"
-            android:layout_toRightOf="@+id/card_image_view"
-            android:layout_weight="5.50"
-            android:gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_StoreName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/tv_SAddr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/five"
-                android:drawableStart="@drawable/ic_baseline_location_on_24"
-                android:drawableTint="@color/black"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_10" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_weight="1.50"
-            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_StoreAdds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/border_layout_new"
                 android:padding="@dimen/dp_8"
                 android:text="3 Advs"
                 android:textColor="@color/black"
                 android:textSize="@dimen/sp_12" />
 
+            <RelativeLayout
+                android:id="@+id/rlTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_toLeftOf="@+id/tv_StoreAdds"
+                android:layout_toRightOf="@+id/card_image_view">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_StoreName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sachin Khare"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_SAddr"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_StoreName"
+                    android:layout_marginTop="10dp"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:drawableTint="@color/black"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_10" />
+            </RelativeLayout>
 
 
-    </LinearLayout>
+        </RelativeLayout>
+<!--    </androidx.cardview.widget.CardView>-->
 </LinearLayout>

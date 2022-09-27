@@ -34,6 +34,7 @@
                         android:id="@+id/imageView_product"
                         android:layout_width="@dimen/dp_50"
                         android:layout_height="@dimen/dp_50"
+                        android:visibility="gone"
                         android:src="@drawable/no_image_available" />
 
                     <View

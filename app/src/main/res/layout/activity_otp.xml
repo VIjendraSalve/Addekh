@@ -49,30 +49,36 @@
                     android:layout_marginTop="12dp"
                     android:lineSpacingExtra="6dp"
                     android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
+
+
                 <TextView
-                    android:id="@+id/tvTimer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="@string/title_timer"
-                    android:textAppearance="@android:style/TextAppearance.Medium"
-                    android:textColor="@color/purple_500" />
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="6dp"
+                    android:layout_gravity="left"
+                    android:visibility="gone"
+                    android:text="Enter Mobile Number : "
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="5dp"
                     android:weightSum="100">
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="25"
+                        android:visibility="gone"
                         android:gravity="center">
 
                         <ImageView
@@ -92,23 +98,30 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="75"
-                        android:background="#f6f6f6">
+                        android:layout_weight="100"
+                       >
 
-                        <EditText
-                            android:id="@+id/edt_Mobile_number"
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@null"
-                            android:hint="1234-567-890"
-                            android:inputType="phone"
-                            android:maxLength="10"
-                            android:editable="false"
-                            android:focusable="false"
-                            android:padding="12dp"
-                            android:textColor="#000000"
-                            android:textColorHint="#c7c7c8"
-                            android:textSize="15sp" />
+                            android:layout_height="wrap_content"
+                            android:hint="@string/mobiles"
+                            app:boxCornerRadiusBottomEnd="10dp"
+                            app:boxCornerRadiusBottomStart="10dp"
+                            app:boxCornerRadiusTopEnd="10dp"
+                            app:boxCornerRadiusTopStart="10dp">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edt_Mobile_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:maxLength="10"
+                                android:textColor="#000000"
+                                android:textSize="12sp" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                     </LinearLayout>
 
@@ -143,12 +156,23 @@
                     android:textAlignment="center"
                     android:textColor="#a3a3a3"
                     android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="@color/black" />
+
                 <TextView
                     android:id="@+id/tv_Resend_otp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:text="RESEND OTP"
+                    android:layout_marginTop="@dimen/ten"
                     android:textAlignment="center"
                     android:textColor="@color/primary"
                     android:textSize="16sp" />
@@ -163,7 +187,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="24dp"
-                    android:background="@drawable/buttonshape"
+                    android:background="@drawable/button_shape"
                     android:text="VERIFY"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"

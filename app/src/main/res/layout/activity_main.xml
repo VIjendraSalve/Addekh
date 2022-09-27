@@ -13,17 +13,23 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tv_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:drawableEnd="@drawable/ic_down"
-            android:drawableStart="@drawable/ic_down_black"
-            android:drawablePadding="@dimen/five"
-            android:layout_margin="@dimen/seven"
-            android:textColor="@color/black"
-            android:textSize="@dimen/dp_20"/>
+
+            <TextView
+                android:id="@+id/tv_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/seven"
+                android:layout_marginBottom="@dimen/seven"
+                android:drawableStart="@drawable/location_pointer"
+                android:drawableEnd="@drawable/ic_down"
+                android:drawablePadding="@dimen/five"
+                android:gravity="center"
+                android:text="Unknown"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_profile"
@@ -42,24 +48,14 @@
             android:layout_marginBottom="@dimen/dp_60"
             android:text="@string/title_home" />
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_plus"
-            app:backgroundTint="@null"
-            app:fabAlignmentMode="center"
-            app:fabCradleRoundedCornerRadius="2dp"
-            app:layout_anchor="@id/bar"
-            app:layout_anchorGravity="bottom|center_horizontal"
-            app:tint="@null" />
-
+        <!--        app:backgroundTint="@null"-->
+<!--        app:fabCradleRoundedCornerRadius="2dp"-->
+<!--        app:layout_anchorGravity="bottom|center_horizontal"-->
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="114dp"
             android:layout_gravity="bottom"
             android:gravity="center"
             android:padding="0dp"
@@ -68,18 +64,47 @@
             app:contentInsetStart="0dp"
             app:fabAlignmentMode="center"
             app:fabAnimationMode="scale"
-            app:layout_anchorGravity="start">
+            app:layout_anchorGravity="start"
+            >
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navigation"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="114dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="0dp"
                 android:background="@color/white"
-                android:padding="0dp"
+                android:paddingTop="25dp"
+                android:paddingEnd="12dp"
+                android:paddingStart="12dp"
+
                 app:labelVisibilityMode="labeled"
-                app:menu="@menu/navigation" />
+                app:menu="@menu/navigation"
+                android:textAlignment="center"
+                android:keyboardNavigationCluster="true"
+
+
+                >
+
+<!--                <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--                    android:id="@+id/floatingActionButton"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:src="@drawable/ic_plus"-->
+<!--                    app:tint="@null"-->
+<!--                    android:layout_marginBottom="5dp"-->
+<!--                    />-->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    android:layout_gravity="center"
+
+                    android:layout_marginBottom="17dp"
+                    app:tint="@null" />
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
         </com.google.android.material.bottomappbar.BottomAppBar>
 

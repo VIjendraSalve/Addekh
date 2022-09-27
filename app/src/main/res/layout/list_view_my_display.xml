@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5"
+    android:elevation="@dimen/dp_0"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="@dimen/dp_0">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:id="@+id/iv_banner_image"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/border"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cloth"
+            android:visibility="gone" />
+
+        <WebView
+            android:id="@+id/webview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:ignore="WebViewLayout" />
+
+        <LinearLayout
+            android:id="@+id/ll_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/webview"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="-30dp"
+            android:background="@drawable/border_layout_store_image"
+            android:padding="@dimen/ten">
+
+            <ImageView
+                android:id="@+id/iv_shop_image"
+                android:layout_width="69dp"
+                android:layout_height="63dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/background_shop_image"
+                android:scaleType="fitXY"
+                android:src="@drawable/no_image_available" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_add_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/webview"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/ll_image"
+            android:text="Wind hans Technologies"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_date_time"
+            android:layout_width="wrap_content"
+            android:layout_height="18sp"
+            android:layout_below="@id/ll_image"
+            android:layout_marginStart="25dp"
+            android:layout_marginBottom="3dp"
+            android:text="3 min ago"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_12"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date_time"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="3dp"
+            android:drawableStart="@drawable/ic_location_on_24"
+            android:ellipsize="end"
+            android:text="Nashik"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_status_of_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_location"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="3dp"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/ten"
+            android:paddingRight="@dimen/ten"
+            android:layout_marginTop="@dimen/five"
+            android:paddingBottom="@dimen/five"
+            android:background="@color/red"
+            android:ellipsize="end"
+            android:text="Nashik"
+            android:textSize="10dp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -25,19 +25,20 @@
                 android:id="@+id/ll_top_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dp_10">
 
                 <RelativeLayout
                     android:id="@+id/rlSearch"
                     android:layout_width="0dp"
-                    android:layout_weight="8.3"
-                    android:layout_height="54dp"
-                    android:layout_below="@+id/rlTopView"
-                    android:layout_margin="@dimen/margin_10"
+                    android:layout_height="51dp"
+                    android:layout_weight="8.4"
                     android:background="@drawable/edittext_background_searchbar"
                     android:clickable="true"
                     android:elevation="10dp"
-                    android:padding="5dp">
+                    android:padding="5dp"
+                    android:layout_marginStart="@dimen/dp_8"
+                    >
 
                     <ImageView
                         android:id="@+id/ivSearch"
@@ -60,19 +61,46 @@
                         android:drawableStart="@drawable/ic_search_black_24dp"
                         android:drawablePadding="@dimen/dp_10"
                         android:hint="Search"
-                        android:textSize="@dimen/thirteen" />
+                        android:textSize="@dimen/fourteen" />
 
                 </RelativeLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="51dp"
+                    android:layout_weight="1.6"
+                    android:background="@drawable/border_layout_new"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/iv_notifiction"
-                    android:layout_width="0dp"
-                    android:layout_weight="1.7"
-                    android:layout_height="54dp"
-                    android:layout_margin="@dimen/margin_10"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
                     android:padding="@dimen/margin_10"
-                    android:background="@drawable/border_layout_new"
-                    android:src="@drawable/ic_notifications_24" />
+                    android:src="@drawable/notification_final_icon"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:layout_marginTop="0dp"/>
+
+                    <TextView
+                        android:id="@+id/cart_badge"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:layout_gravity="top|center"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        android:background="@drawable/notification_dot"
+                        android:gravity="center"/>
+
+
+                </FrameLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -90,7 +118,8 @@
                     android:layout_height="wrap_content"
                     android:padding="@dimen/dp_10"
                     android:background="@drawable/custom_border_category_dashboard"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvCategory"

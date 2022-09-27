@@ -296,5 +296,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dp_0.5">0.5dp</dimen>
     <dimen name="dp_7">7dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
 
 </resources>

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="600dp"
     android:background="@drawable/dialog_bg"
-    tools:context=".Fragments.FragmentAdvDetails">
+    tools:context=".Fragments.FragmentAdvDetails"
+    android:layout_margin="@dimen/dp_5"
+    android:elevation="@dimen/dp_0"
+    app:cardElevation="@dimen/dp_0"
+    app:cardCornerRadius="15dp">
 
 
     <ScrollView
@@ -15,54 +20,66 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                tools:ignore="MissingConstraints">
+                android:layout_height="wrap_content">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cars_view_first"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="@color/white"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="5dp"
-                    app:cardUseCompatPadding="true">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5"
+    android:elevation="@dimen/dp_0"
+    app:cardElevation="@dimen/dp_0"
+    app:cardCornerRadius="8dp">
 
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/border"
+                        >
 
                         <ImageView
                             android:id="@+id/iv_banner_image"
                             android:layout_width="match_parent"
-                            android:layout_height="250dp"
+                            android:layout_height="210dp"
                             android:adjustViewBounds="true"
+                            android:background="@drawable/border"
                             android:scaleType="centerCrop"
+                            android:visibility="gone"
                             android:src="@drawable/cloth" />
+
+                        <WebView
+                            android:id="@+id/webview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/border"
+                            tools:ignore="WebViewLayout" />
 
                         <LinearLayout
                             android:id="@+id/ll_image"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_below="@id/iv_banner_image"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="-50dp"
-                            android:background="@color/white"
-                            android:padding="10dp">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/webview"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:layout_marginTop="-30dp"
+                            android:background="@drawable/border_layout_store_image"
+                            android:padding="@dimen/ten">
 
                             <ImageView
                                 android:id="@+id/iv_shop_image"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
+                                android:layout_width="71dp"
+                                android:layout_height="63dp"
                                 android:adjustViewBounds="true"
-                                android:background="@color/white"
+                                android:background="@drawable/background_shop_image"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/small_img" />
+                                android:src="@drawable/no_image_available" />
 
                         </LinearLayout>
 
@@ -71,13 +88,13 @@
                             android:id="@+id/tv_add_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/iv_banner_image"
+                            android:layout_below="@id/webview"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:layout_toRightOf="@+id/ll_image"
                             android:text="Wind hans Technologies"
                             android:textColor="@color/black"
-                            android:textSize="15dp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -85,9 +102,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/ll_image"
-                            android:layout_marginLeft="40dp"
+                            android:layout_marginStart="30dp"
                             android:layout_marginBottom="3dp"
-                            android:text="3 min ago" />
+                            android:text="3 min ago"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/sp_12"
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/tv_location"
@@ -96,49 +116,50 @@
                             android:layout_below="@id/tv_date_time"
                             android:layout_alignParentRight="true"
                             android:layout_marginStart="3dp"
-                            android:layout_marginEnd="3dp"
+                            android:layout_marginEnd="15dp"
                             android:layout_marginBottom="3dp"
-                            android:drawableStart="@drawable/add_location"
-                            android:maxLength="20"
+                            android:drawableStart="@drawable/ic_location_on_24"
+                            android:ellipsize="end"
                             android:text="Nashik"
-                            android:textSize="13dp" />
+                            android:textSize="10dp" />
 
                     </RelativeLayout>
 
-                </androidx.cardview.widget.CardView>
 
+</androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
                 android:background="@drawable/discription_design"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/dp_10">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="16dp"
                     android:text="Discription"
-                    android:textColor="@color/black"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/light_black_background"
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="20dp"
                         android:drawableLeft="@drawable/ic_bullet"
-                        android:drawableTint="#F44336" />
+                        android:drawableTint="#F44336"
+                        android:layout_marginTop="5dp"/>
 
                     <TextView
                         android:id="@+id/discription"
@@ -146,14 +167,14 @@
                         android:layout_height="wrap_content"
                         android:text="The spelling mistakes in the text had been highlighted in green."
                         android:textColor="@color/black"
-                        android:textSize="15dp" />
+                        android:textSize="14sp" />
                 </LinearLayout>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="4dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -162,9 +183,8 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="10dp"
                         android:text="Store Name"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/light_black_background"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:id="@+id/StoreName"
@@ -174,7 +194,7 @@
                         android:layout_marginBottom="10dp"
                         android:text="Wins Hans Technology"
                         android:textColor="@color/black"
-                        android:textSize="15dp" />
+                        android:textSize="14sp" />
 
 
                 </LinearLayout>
@@ -188,11 +208,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="7dp"
                         android:text="Store Address"
-                        android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
+                        android:textColor="@color/light_black_background"
+                        android:textSize="18dp" />
 
                     <TextView
                         android:id="@+id/adv_Address"
@@ -202,7 +221,7 @@
                         android:layout_marginBottom="10dp"
                         android:text="Near Pinacal Mall CBS Nashik"
                         android:textColor="@color/black"
-                        android:textSize="15dp" />
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -221,11 +240,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="4dp"
                             android:text="Store Contact"
-                            android:textColor="@color/black"
-                            android:textSize="20dp"
-                            android:textStyle="bold" />
+                            android:textColor="@color/light_black_background"
+                            android:textSize="18dp" />
 
 
                         <TextView
@@ -237,22 +255,32 @@
                             android:text="8956535974"
                             android:textAlignment="gravity"
                             android:textColor="@color/black"
-                            android:textSize="15dp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="end">
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:gravity="end"
+                        android:background="@drawable/demo_design"
+                        android:layout_marginLeft="90dp">
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/iv_like_adv"-->
+<!--                            android:layout_width="35dp"-->
+<!--                            android:layout_height="35dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:src="@drawable/ic_unlike_" />-->
 
                         <ImageView
                             android:id="@+id/iv_like_adv"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_unlike_img"
                             android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="20dp"
-                            android:src="@drawable/ic_unlike" />
+                            android:layout_marginRight="12dp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -263,58 +291,112 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="2"
+                android:layout_marginTop="14dp">
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1">
 
                     <Button
                         android:id="@+id/btn_direction"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:backgroundTint="@color/black"
-                        android:drawableLeft="@drawable/ic_baseline_directions_24"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_direction_"
                         android:text="Direction"
+                        android:textAlignment="viewStart"
+                        android:textSize="16sp"
                         android:textColor="@color/white"
-                        />
+                        android:padding="13dp"
+                        android:backgroundTint="@color/light_black_background" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_20"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp">
 
                     <Button
                         android:id="@+id/btn_share"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_50"
-                        android:background="@color/red"
-                        android:drawableLeft="@drawable/ic_baseline_share_24"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/light_yellow_background"
+                        android:drawableLeft="@drawable/ic_final_share_24"
                         android:text="Share"
+                        android:textSize="15sp"
                         android:textColor="@color/white"
-                        android:textSize="15dp"
+                        android:padding="13dp"
+                        android:textAlignment="viewStart"/>
 
-                        />
                 </LinearLayout>
 
+
+
+
+
+
             </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="20dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="2">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1">-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_direction"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="@dimen/dp_50"-->
+<!--                        android:backgroundTint="@color/black"-->
+<!--                        android:drawableLeft="@drawable/ic_direction_"-->
+<!--                        android:text="Direction"-->
+<!--                        android:textSize="@dimen/sp_12"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="@dimen/dp_20"-->
+<!--                    android:layout_weight="1">-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_share"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:background="@color/red"-->
+<!--                        android:drawableLeft="@drawable/ic_sharedetails"-->
+<!--                        android:text="Share"-->
+<!--                        android:textSize="@dimen/sp_12"-->
+<!--                        android:textColor="@color/white"-->
+
+<!--                        />-->
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginBottom="@dimen/dp_40"
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="AD ID :"
                     android:textColor="@color/black"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -324,7 +406,7 @@
                     android:layout_marginLeft="@dimen/dp_10"
                     android:text="459848"
                     android:textColor="@color/black"
-                    android:textSize="20dp" />
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/reportAD"
@@ -334,7 +416,7 @@
                     android:text="REPORT AD"
                     android:textAlignment="viewEnd"
                     android:textColor="#F44336"
-                    android:textSize="15dp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
 
@@ -342,4 +424,4 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

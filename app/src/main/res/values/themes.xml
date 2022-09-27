@@ -141,7 +141,6 @@
         <item name="android:windowEnterAnimation">@anim/up_from_bottom</item>
         <item name="android:windowExitAnimation">@anim/slide_in_bottom</item>
 
-
     </style>
 
     <!--notification-->
@@ -157,6 +156,25 @@
         <item name="android:backgroundDimAmount">0.4</item>
         <!-- <item name="android:windowEnterAnimation">@anim/fab_scale_up</item>
          <item name="android:windowExitAnimation">@anim/fab_scale_down</item>-->
+    </style>
+    <style name="Theme.Addekho.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Addekho.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Addekho.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="MyCardView" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MaterialCardView.Cut</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.MaterialCardView.Cut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">10dp</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
 </resources>

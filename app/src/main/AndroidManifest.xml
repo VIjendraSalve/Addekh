@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.wht.addekho">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wht.addekh">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,20 +20,26 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
+
+
     <application
-        android:name=".Helper.MyApplication"
-        android:allowBackup="true"
+        android:name="com.wht.addekh.Helper.MyApplication"
+        android:allowBackup="false"
         android:icon="@drawable/adddekhologo"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/adddekhologo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Addekho"
-        android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
-        >
+        tools:replace="android:allowBackup">
+
+        <activity
+            android:name="com.wht.addekh.Activties.Template.AddTemplateFieldsActivity"
+            android:exported="false" />
 
         <receiver
-            android:name=".Helper.MyLocationService"
+            android:name="com.wht.addekh.Helper.MyLocationService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -40,83 +47,85 @@
             </intent-filter>
         </receiver>
 
-        <service android:name=".Notification.FirebaseMessageService"
+        <service
+            android:name="com.wht.addekh.Notification.FirebaseMessageService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
-        <activity android:name=".Notification.ActivityNotification"
-            android:exported="false"/>
-
         <activity
-            android:name=".Activties.MyStoreActivity"
+            android:name="com.wht.addekh.Notification.ActivityNotification"
             android:exported="false" />
         <activity
-            android:name=".Activties.ShowAdvertiesmentActivity"
+            android:name="com.wht.addekh.Activties.MyStoreActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.NotificationActivity"
+            android:name="com.wht.addekh.Activties.ShowAdvertiesmentActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.CreateBannerActivity"
+            android:name="com.wht.addekh.Activties.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.ActivityGetLocation"
+            android:name="com.wht.addekh.Activties.CreateBannerActivity"
             android:exported="false" />
         <activity
-            android:name=".map_custom_search.PickLocationActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Activties.CityAreaActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".google_search.SearchResultActivity"
+            android:name="com.wht.addekh.Activties.Template.TemplateCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.InitialActivity.EditProfileActivity"
+            android:name="com.wht.addekh.Activties.ActivityGetLocation"
             android:exported="false" />
         <activity
-            android:name=".Activties.ProductListActivity"
+            android:name="com.wht.addekh.map_custom_search.PickLocationActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.CategorySearchActivity"
+            android:name="com.wht.addekh.Activties.CityAreaActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.AddAdsActivity"
+            android:name="com.wht.addekh.google_search.SearchResultActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.TemplateListActivity"
+            android:name="com.wht.addekh.Activties.InitialActivity.EditProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.BannerListActivity"
+            android:name="com.wht.addekh.Activties.ProductListActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.AllCategoryActivity"
+            android:name="com.wht.addekh.Activties.CategorySearchActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.InitialActivity.ResendOtpActivity"
+            android:name="com.wht.addekh.Activties.AddAdsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activties.BottomsheetImagePickerActivity"
+            android:name="com.wht.addekh.Activties.TemplateListActivity"
             android:exported="false" />
-        <activity android:name=".Activties.InitialActivity.OtpActivity" />
-        <activity android:name=".Activties.ActivityAddStore" />
-        <activity android:name=".Adapter.StoreListAdapter" />
         <activity
-            android:name=".Activties.AddProductActivity"
+            android:name="com.wht.addekh.Activties.BannerListActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wht.addekh.Activties.AllCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wht.addekh.Activties.InitialActivity.ResendOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.wht.addekh.Activties.BottomsheetImagePickerActivity"
+            android:exported="false" />
+        <activity android:name="com.wht.addekh.Activties.InitialActivity.OtpActivity" />
+        <activity android:name="com.wht.addekh.Activties.ActivityAddStore" />
+        <activity android:name="com.wht.addekh.Adapter.StoreListAdapter" />
+        <activity
+            android:name="com.wht.addekh.Activties.AddProductActivity"
             android:exported="true" />
         <activity
-            android:name=".Activties.InitialActivity.LoginActivity"
+            android:name="com.wht.addekh.Activties.InitialActivity.LoginActivity"
             android:exported="true" />
         <activity
-            android:name=".Activties.InitialActivity.GetStartedActivity"
+            android:name="com.wht.addekh.Activties.InitialActivity.GetStartedActivity"
             android:exported="true" />
         <activity
-            android:name=".Activties.InitialActivity.SplashActivity"
+            android:name="com.wht.addekh.Activties.InitialActivity.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -124,11 +133,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activties.ProductDetailActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Activties.InitialActivity.SignUpActivity" />
-        <activity android:name=".Activties.ActivityStoreList" />
-        <activity android:name=".Activties.BottomsheetActivity" />
+        <activity android:name="com.wht.addekh.Activties.ProductDetailActivity" />
+        <activity android:name="com.wht.addekh.MainActivity" />
+        <activity android:name="com.wht.addekh.Activties.ActivityStoreList" />
+        <activity android:name="com.wht.addekh.Activties.BottomsheetActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -141,7 +149,7 @@
         </provider>
 
         <activity
-            android:name=".Helper.ImagePickerActivity"
+            android:name="com.wht.addekh.Helper.ImagePickerActivity"
             android:resizeableActivity="false"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" /> <!-- uCrop cropping activity -->
@@ -149,16 +157,11 @@
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".Activties.InitialActivity.ProfileActivity" />
+        <activity android:name="com.wht.addekh.Activties.InitialActivity.ProfileActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-
-        <!--<meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="@string/google_maps_key" />-->
-
     </application>
 
 </manifest>

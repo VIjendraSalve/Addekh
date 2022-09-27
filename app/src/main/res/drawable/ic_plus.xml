@@ -7,8 +7,8 @@
                 android:endColor="@color/primary"
                 android:startColor="@color/primary" />
             <size
-                android:width="40dp"
-                android:height="40dp" />
+                android:width="25dp"
+                android:height="25dp" />
         </shape>
     </item>
     <item

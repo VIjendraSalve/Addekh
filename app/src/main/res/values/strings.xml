@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Addekho</string>
+    <string name="app_name">Addekh</string>
     <string name="title_home">Home</string>
     <string name="title_search">Search</string>
     <string name="title_notifications">Notifications</string>
@@ -246,7 +246,7 @@
     <string name="loading">Loading..</string>
     <string name="retry">Retry</string>
     <string name="internet_not_avilable">Internet connection not available</string>
-    <string name="app_url">Download Now https://play.google.com/store/apps/details?id=com.wht.addekho</string>
+    <string name="app_url">Download Now https://play.google.com/store/apps/details?id=com.wht.addekh</string>
     <string name="google_maps_key">AIzaSyDYZLCCrn3TkiueZTGAa0PEeigNOD0Y9uM</string>
     <string name="enter_place_name">Enter Place Name</string>
     <string name="notification_delete_warning">Are you sure you want to delete All Notifications?</string>
@@ -264,5 +264,18 @@
     <string name="noti_delete">Notification Delete Successfully</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="title_activity_add_template_details">AddTemplateDetailsActivity</string>
+
+
+<!--    //Asterisk  Field-->
+    <string name="Ad_Title">Ad Title<font color='#FF0000'>*</font></string>
+    <string name="Advertisemet_End_date">Advertisemet End date<font color='#FF0000'>*</font></string>
+    <string name="Ad_description">Ad description<font color='#FF0000'>*</font></string>
+    <string name="Ad_Tags">Ad Tags<font color='#FF0000'>*</font></string>
+    <string name="Store_Name">Store Name<font color='#FF0000'>*</font></string>
+    <string name="Store_Address">Store Address<font color='#FF0000'>*</font></string>
+    <string name="Store_Contact">Store Contact<font color='#FF0000'>*</font></string>
+    <string name="Store_Category">Store Category<font color='#FF0000'>*</font></string>
+    <string name="Store_Description">Store Description<font color='#FF0000'>*</font></string>
 
 </resources>

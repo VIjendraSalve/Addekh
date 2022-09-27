@@ -18,7 +18,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="primary">#F81605</color>
+    <color name="primary">#D7182A</color>
     <color name="primary_dark">#C64845</color>
     <color name="primary_light">#FF827F</color>
     <color name="pink">#FFCCDD</color>
@@ -75,6 +75,15 @@
     <color name="google_bg">#ededed</color>
     <color name="golden_yellow">#ffd700</color>
     <color name="Navyblue">#112d51</color>
+
+
+    <color name="light_gray_background">#0D333333</color>
+    <color name="light_black_background">#333333</color>
+    <color name="light_yellow_background">#FCCF5A</color>
+    <color name="text_banner_color">#80333333</color>
+
+    <color name="light_pink">#FD9AC5</color>
+<!--    <color name="light_pink_background">#F4579A</color>-->
 
 
 </resources>
