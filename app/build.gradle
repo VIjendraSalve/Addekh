@@ -33,6 +33,7 @@ android {
     buildFeatures {
         viewBinding false
     }
+    namespace 'com.wht.addekh'
 }
 
 dependencies {

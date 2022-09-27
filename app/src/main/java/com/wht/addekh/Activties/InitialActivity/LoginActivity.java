@@ -57,6 +57,8 @@ public class LoginActivity extends BaseActivity {
         validations = new Validations();
         connectionDetector = ConnectionDetector.getInstance(_act);
 
+
+
         otp = findViewById(R.id.otp);
         btn_Generate_otp = findViewById(R.id.btn_Generate_otp);
         edt_Mobile_number = findViewById(R.id.edt_Mobile_number);
@@ -76,6 +78,7 @@ public class LoginActivity extends BaseActivity {
                 if (connectionDetector.checkConnection(_act)) {
                     if (isValid()) {
                         Helper_Method.hideSoftInput(_act);
+                        Toast.makeText(LoginActivity.this, "Code Pushed", Toast.LENGTH_SHORT).show();
                         userLogin();
                     }
 
